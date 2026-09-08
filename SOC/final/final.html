@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .title{
+            color:white;
+            text-align:center;
+        }
+        .header{
+            background-color:orange;
+        }
+        .introduce{
+            margin: auto 25%;
+            border: 1px solid black;
+        }
+        .introduce{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px 28px;
+        }
+        .introduce1{
+            display: flex; flex-direction: column;
+        }
+        .introduce0{
+            grid-column: 1 / -1;
+        }
+         .form{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px 28px;
+            margin: auto 25%;
+        }
+        .form1{
+            display: flex; flex-direction: column;
+        }
+        .form2{
+            grid-column: 1 / -1;
+        }
+        .form0{
+            margin: auto 25%;
+        }
+        .form textarea {
+            border: 1.5px solid black;
+            border-radius: 10px;
+            width: 100%;
+        }
+        .form select {
+            border: 1.5px solid black;
+            border-radius: 10px;
+        }
+        .form input {
+            border: 1.5px solid black;
+            border-radius: 10px;
+        }
+        .modal {
+            display:none;
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,0.5);
+            align-items: center; justify-content: center;
+        }
+        .modal.show {
+            display:flex; 
+        }
+        .modal1 {
+            background: #fff; padding: 30px 40px;
+            border-radius: 8px; text-align: center;
+        }
+        @media (max-width: 768px) {
+            .introduce, .form {
+                margin: auto 5%;     
+                grid-template-columns: 1fr;
+            }
+            .form0 {
+                 margin: 5%;
+            }}
+
+    </style>
+    <title>SACC科技创新大赛</title>
+</head>
+<body>
+    <div class="header">
+        <h1 class="title">SACC科技创新大赛</h1>
+        <h3 class="title">南京邮电大学计算机学院科学技术协会</h3>
+    </div>
+    
+    <div class="introduce">
+        <div class="introduce0" >
+            <h2  style="color:orange">比赛信息</h2>
+        </div>
+        <div class="introduce1">
+            <p><span>比赛名称:</span>SACC科技创新大赛</p>
+        </div>
+        <div class="introduce1">
+            <p><span>主办单位：</span>计算机学院科学与技术协会</p>
+        </div>
+        <div class="introduce1">
+            <p><span>比赛时间:</span>2026年10月8日</p>
+        </div>
+        <div class="introduce1">
+            <p><span>比赛地点:</span>南邮仙林校区 计算机学科楼</p>
+        </div>
+        <div class="introduce1">
+            <p><span>报名截止:</span>2026年9月30日</p>
+        </div>
+        <div class="introduce1">
+            <p><span>面向对象:</span>南京邮电大学全体在校生</p>
+        </div>
+        <p class="introduce0">
+            本次大赛初衷在于激发同学们的创新热情，实践能力和合作精神。本次比赛共设立“算法竞赛”“项目设计”“创业实践”三条赛道，参赛同学可以组队参赛（每队不超过3人），允许跨专业，跨学院组队。脱颖而出的队伍将获得校级证书与神秘大奖，更有机会获得学院的支持。
+        </p>
+    </div>
+    <div class="form0">
+        <h2 style="color:orange;">在线报名</h2>
+    </div>
+    <div>
+        <form action="" method="post" id="SACC">
+            <div class="form">
+                <div class="form1">
+                    <label for="name">姓名<span style="color:red">*</span>:</label>
+                    <input type="text" id="name" placeholder="请输入你的真实姓名" required>
+                </div>
+                <div class="form1">
+                    <label for="id">学号<span style="color:red">*</span>:</label>
+                    <input type="text" id="id" pattern="B\d{8}" placeholder="例如： B26010101" required>
+                </div>
+                <div class="form1">
+                    <label for="phonenumber">手机号<span style="color:red">*</span>:</label>
+                    <input type="tel" id="phonenumber" pattern="1[3-9]\d{9}" placeholder="请输入11位手机号" required minlength="11" maxlength="11">
+                </div>
+                <div class="form1">
+                    <label for="email">邮箱：</label>
+                    <input type="text" id="email" placeholder="example@njupt.edu.cn">
+                </div>
+                <div class="form1">
+                    <label for="college">学院<span style="color:red">*</span>:</label>
+                    <input type="text" id="college" placeholder="例如：计算机学院" required>
+                </div>
+                <div class="form1">
+                    <label for="competition-select">参赛类型<span style="color:red">*</span>:</label>
+                    <select name="competition" id="competiton-select" required>
+                        <option value="">请选择参赛类型：</option>
+                        <option value="1">算法竞赛</option>
+                        <option value="2">项目设计</option>
+                        <option value="3">创业实践</option>
+                    </select>
+                </div>
+                <div class="form2">
+                    <label for="adjust">是否服从调剂</label><br>
+                    <label for="yes">是</label>
+                    <input type="radio" name="compete" id="yes" value="yes">
+                    <label for="no">否</label>
+                    <input type="radio" name="compete" id="no" value="no">
+                </div>
+                <div class="form2">
+                    <label for="introduction">个人简介/参赛宣言</label><br>
+                    <textarea name="introduction" id="introduction" cols="40" rows="5" placeholder="请简单介绍一下自己，或写下你的比赛宣言(选填)"></textarea>
+                </div>
+                <div class="form-submit">
+                    <input type="submit" value="提交" id="submit">
+                </div>
+            </div>
+        </form>
+            <div class="modal" id="modal">
+                <div class="modal1">
+                    <h3>报名成功！</h3>
+                    <p>感谢你的报名</p>
+                    <button class="closebtn" id="closebtn">我知道了</button>
+                </div>
+            </div>
+    </div>
+    <script>
+        const modal = document.getElementById('modal')
+        const form = document.getElementById('SACC')
+        const closebtn = document.getElementById('closebtn')
+        function openmodal() {modal.classList.add('show');}
+        function closemodal() {modal.classList.remove('show');}
+        form.addEventListener('submit',function(e){
+            e.preventDefault();
+            openmodal();
+        })
+        closebtn.addEventListener('click',function(){
+            closemodal();
+        })
+
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 初体验</title>
+</head>
+<body>
+    <h1>计数器</h1>
+    <p>你点击了<span id="countDisplay">0</span>次</p>
+    <buttton id="countBtn">点我 +1</buttton>
+    
+   <script>
+     const btn =document.querySelector("#countBtn");
+        const display = document.querySelector("#countDisplay");
+        let count = 0;
+        btn.addEventListener("click",function(){
+            count = count + 1;
+            display.textContent = count;    
+        })
+   </script>
+</body>
+</html>
